@@ -1,0 +1,165 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.roboto-thin {
+    font-family: "Roboto", serif;
+    font-weight: 100;
+    font-style: normal;
+  }
+  
+  .roboto-light {
+    font-family: "Roboto", serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  .roboto-regular {
+    font-family: "Roboto", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .roboto-medium {
+    font-family: "Roboto", serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  .roboto-bold {
+    font-family: "Roboto", serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .roboto-black {
+    font-family: "Roboto", serif;
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+  .roboto-thin-italic {
+    font-family: "Roboto", serif;
+    font-weight: 100;
+    font-style: italic;
+  }
+  
+  .roboto-light-italic {
+    font-family: "Roboto", serif;
+    font-weight: 300;
+    font-style: italic;
+  }
+  
+  .roboto-regular-italic {
+    font-family: "Roboto", serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  .roboto-medium-italic {
+    font-family: "Roboto", serif;
+    font-weight: 500;
+    font-style: italic;
+  }
+  
+  .roboto-bold-italic {
+    font-family: "Roboto", serif;
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  .roboto-black-italic {
+    font-family: "Roboto", serif;
+    font-weight: 900;
+    font-style: italic;
+  }
+
+
+.home {
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+}
+.home img {
+    width: 300px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+}
+.about{
+  width: 600px;
+}
+
+  .form{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    border-radius: 20px;
+    
+  }
+    body{
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-image: url("https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg");
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        
+}
+
+
+.navbar{
+        background-color: lightblue;
+        padding: 35px;
+        z-index: 1;
+        display: block;
+        position: sticky;
+        text-align: center;
+    }
+    
+    .links {
+    margin-right: 50px;
+    color: white;
+    display: inline-block;
+}
+.links :hover{
+  color: rgba(45, 12, 12, 0.6);
+}
+
+
+
+.about{
+    width: 300px;
+}
+.gow {
+    width: 300px;
+}
+
+.utenti{
+    padding: 20px;
+    display: flex;
+}
+
+ .profili{
+    padding: 20px;
+}
+
+.profilo{
+     background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-radius: 200px;
+}
+.linkutenti{
+    color: white;
+    font-size: 1px;
+ 
+}
+

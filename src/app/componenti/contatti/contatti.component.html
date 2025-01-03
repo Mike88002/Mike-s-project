@@ -1,0 +1,17 @@
+
+
+<div [ngStyle]="{'display' : 'inline-block' , 'padding-top': '50px'}">
+    <h1 [ngStyle]="{'text-transform':'uppercase', 'font-size': '40px'}">Lista utenti</h1>
+    <div [ngStyle]= "{'align-items' : 'center'}" >
+
+        <div  class="" [ngStyle]= "{'font-size': '20px'}" *ngFor="let persona of persone; index as i">
+        <a routerLink ='/contatti/{{i}}' class="linkutenti" ><h3>{{persona.nome}} {{persona.cognome}} </h3></a>
+        </div>
+
+
+
+    </div>
+</div>
+<router-outlet></router-outlet>
+<!-- <app-contatto [persona]='persona'></app-contatto> -->
+
