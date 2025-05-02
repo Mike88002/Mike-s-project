@@ -29,7 +29,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
                   private fb: FormBuilder,
                  ){}
   
-      fetchData( ): void{
+      fetchData(): void{
           this.articleService.getArticles(this.searchValue)
             .subscribe((article) => {
             this.articles = article;
@@ -44,15 +44,15 @@ import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
         //region life cycle
         
         ngOnInit(): void {
-          this.searchForm = this.fb.nonNullable.group({
+            this.searchForm = this.fb.nonNullable.group({
             searchValue: '',
           });
           this.fetchData();
         }
+
+        ngAfterViewInit(): void {}
         
-        ngOnDestroy() : void {
-          
-        }
+        ngOnDestroy() : void {}
 
         //endregion life cycle
       }
