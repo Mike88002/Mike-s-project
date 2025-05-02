@@ -14,11 +14,16 @@
   </div>
 </nav>
 <main>
-  <li class="li-unlisted" *ngFor="let article of articles">
-    <ul>
-      {{ article.title }}
-    </ul>
-  </li>
+  <div class="row">
+    <div class="col">
+      <li class="list-inline" *ngFor="let article of articles">
+        <ul>
+          {{ article.title }}
+        </ul>
+      </li>
+    </div>
+  </div>
+
 </main>
 
 <router-outlet></router-outlet>

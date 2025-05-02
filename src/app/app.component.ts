@@ -30,10 +30,15 @@ import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
                  ){}
   
       fetchData(): void{
+        const value = this.searchValue;
+        if (!value) {
+          return;
+        }
           this.articleService.getArticles(this.searchValue)
             .subscribe((article) => {
             this.articles = article;
           })
+
         }
               
         onSearchSubmit(): void {
@@ -47,7 +52,6 @@ import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
             this.searchForm = this.fb.nonNullable.group({
             searchValue: '',
           });
-          this.fetchData();
         }
 
         ngAfterViewInit(): void {}
