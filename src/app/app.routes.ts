@@ -9,7 +9,7 @@ import { QuizFormComponent } from './Quiz/quiz-form/quiz-form.component';
 import { DashboardComponent } from './componenti/dashboard/dashboard.component';
 
 export const routes: Routes = [
-    {path: '',title: 'App Home Page',    component: HomeComponent, }   ,
+    {path: '',title: 'Home Page',    component: HomeComponent, }   ,
     { path: 'about', title: 'About us',    component: AboutComponent,},
     {path: "Quiz", title: "Quiz bellissimi",  component: QuizFormComponent},
     { path: 'login', title: 'Login', component: LoginComponent },

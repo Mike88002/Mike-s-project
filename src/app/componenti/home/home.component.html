@@ -1,87 +1,26 @@
 <section class="home">
-<div>
-  <h1>Ciao, inserisci i tuoi dati</h1>
   <div>
-    <img src="https://cdn.drivek.com/configurator-imgs/cars/it/Original/AUDI/RS-7-SPORTBACK/38943_HATCHBACK-5-DOORS/audi-rs-7-sportback-2019.jpg" class = 'home'alt="">
+    <h1>Ciao, inserisci i tuoi dati</h1>
+    <div>
+      <img src="https://cdn.drivek.com/configurator-imgs/cars/it/Original/AUDI/RS-7-SPORTBACK/38943_HATCHBACK-5-DOORS/audi-rs-7-sportback-2019.jpg" class = 'home'alt="">
+    </div>
+    <form [formGroup]="homeform" class="form" (ngSubmit)="onsubmitta()">
+      <mat-form-field appearance="fill">
+        <mat-label>Nome</mat-label>
+        <input matInput type="text"  formControlName="name">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Inserisci l'email</mat-label>
+        <input matInput type="email"  formControlName="email" >
+      </mat-form-field>
+
+      <button mat-button type="submit" >Invia dati</button>
+    </form>
   </div>
-  <form [formGroup]="homeform" class="form" (ngSubmit)="onsubmitta()">
-    <mat-form-field appearance="fill">
-      <mat-label>Nome</mat-label>
-      <input matInput type="text"  formControlName="name">
-    </mat-form-field>
-    
-    <mat-form-field appearance="fill">
-      <mat-label>Inserisci l'email</mat-label>
-      <input matInput type="email"  formControlName="email" >
-    </mat-form-field>
-    
-    <button mat-button type="submit" >Invia dati</button>
-  </form>
-</div>
 
-<h4>Sono {{numero | currency: 'EUR': 'symbol-narrow': '1.2'}} 
-  e sono le {{oggi | date:'h:mm:ss'}} del {{ oggi |date:'d/MMM/yyyy '}}</h4>
-  <!-- <form class="form" [formGroup]="addressform" (ngSubmit)=onsubmitta()>
-    <mat-form-field class="example-full-width">
-      <mat-label>Company (disabled)</mat-label>
-      <input matInput disabled value="Google" >
-    </mat-form-field>
-    
-    <table class="example-full-width" cellspacing="0"><tr>
-      <td><mat-form-field class="example-full-width">
-        <mat-label>Inserisci nome</mat-label>
-        <input matInput formControlName="nome">
-      </mat-form-field></td>
-      <td><mat-form-field class="example-full-width">
-        <mat-label>Cognome...</mat-label>
-        <input matInput formControlName ='cognome'>
-      </mat-form-field></td>
-    </tr></table>
-    
-    <p>
-      <mat-form-field class="example-full-width">
-        <mat-label>indirizzo</mat-label>
-        <textarea matInput placeholder="Ex. 100 Main St" formControlName="address"></textarea>
-      </mat-form-field>
-      <mat-form-field class="example-full-width">
-        <mat-label>Secondo indirizzo</mat-label>
-        <textarea matInput formControlName="address2"></textarea>
-      </mat-form-field>
-    </p>
-    
-    <table class="example-full-width" cellspacing="0"><tr>
-      <td><mat-form-field class="example-full-width">
-        <mat-label>Città</mat-label>
-        <input matInput placeholder="Ex. San Francisco" formControlName="city">
-      </mat-form-field></td>
-      <td><mat-form-field class="example-full-width">
-        <mat-label>Stato</mat-label>
-        <input matInput placeholder="Ex. California" formControlName="state">
-      </mat-form-field></td>
-      <td><mat-form-field class="example-full-width">
-        <mat-label>Codice postale</mat-label>
-        <input matInput #postalCode maxlength="5" placeholder="Ex. 94105" value="" formControlName="postalCode">
-        <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
-      </mat-form-field></td>
-    </tr></table>
-    <button mat-raised-button color="primary" type="submit" >Invia i dati qui</button>
-    
-  </form>
-  
-</div> -->
-
-<!-- <div *ngIf="data$ | async as data">
-  <h4>
-    <div *ngFor="let persona of data.persone ">
-      {{persona.nome}} 
-    </div>
-    --
-    <div *ngFor="let persona of data.filteredpersone ">
-      {{persona.nome}} 
-    </div>
+  <h4>Sono {{numero | currency: 'EUR': 'symbol-narrow': '1.2'}}
+    e sono le {{oggi | date:'h:mm:ss'}} del {{ oggi |date:'d/MMM/yyyy '}}
   </h4>
-</section>
-</div> -->
 
-  
 </section>

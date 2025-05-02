@@ -1,28 +1,24 @@
+<nav class="navbar">
+  <div>
+    <a routerLink="/" class="links li-group-item"><h6>Home</h6></a>
+    <a routerLink="/about" class="links"><h6>About</h6></a>
+    <a routerLink="/login" class="links"><h6>Login</h6></a>
+    <a routerLink="/contatti" class="links"><h6>Contatti</h6></a>
+    <a routerLink="/Quiz" class="links">Quiz per tutti</a>
+    <div>
+      <form [formGroup]="searchForm" class="container searchBar py-5" (ngSubmit)="onSearchSubmit()">
+        <input type="text" formControlName="searchValue" placeholder="Search..." class="searchBarInput" />
+        <button type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+<main>
+  <li class="li-unlisted" *ngFor="let article of articles">
+    <ul>
+      {{ article.title }}
+    </ul>
+  </li>
+</main>
 
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <nav class= 'navbar'>
-      <div>
-        <a routerLink="/" class="links"><h6>Home</h6></a>
-        <a routerLink="/about" class="links"><h6>About</h6></a>
-        <a routerLink="/login" class="links"><h6>Login</h6>  </a>
-        <a routerLink="/contatti" class="links"><h6>contatti</h6></a>
-        <a routerLink="/Quiz" class="links">Quiz per tutti</a>
-      </div>
-    </nav >
-    <router-outlet></router-outlet>
-    
-  </body>
-  </html>        
-          
-        
-          
+<router-outlet></router-outlet>
