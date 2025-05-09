@@ -1,18 +1,4 @@
-<nav class="navbar">
-  <div>
-    <a routerLink="/" class="links li-group-item"><h6>Home</h6></a>
-    <a routerLink="/about" class="links"><h6>About</h6></a>
-    <a routerLink="/login" class="links"><h6>Login</h6></a>
-    <a routerLink="/contatti" class="links"><h6>Contatti</h6></a>
-    <a routerLink="/Quiz" class="links">Quiz per tutti</a>
-    <div>
-      <form [formGroup]="searchForm" class="container searchBar py-5" (ngSubmit)="onSearchSubmit()">
-        <input type="text" formControlName="searchValue" placeholder="Search..." class="searchBarInput" />
-        <button type="submit">Search</button>
-      </form>
-    </div>
-  </div>
-</nav>
+<nav class="navbar"></nav>
 <main>
   <div class="row">
     <div class="col">
@@ -23,7 +9,11 @@
       </li>
     </div>
   </div>
-
+  <app-left-sidebar [isLeftSidebarCollapsed]="isLeftSidebarCollapsed()"
+                    (changeIsLeftSidebarCollapsed)="changeIsLeftSidebarCollapsed($event)">
+  </app-left-sidebar>
+  <app-main [isLeftSidebarCollapsed]="isLeftSidebarCollapsed()"
+            [screenWidth]="screenWidth()">
+  </app-main>
 </main>
-
 <router-outlet></router-outlet>
