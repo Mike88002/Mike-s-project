@@ -34,7 +34,9 @@ import { MatInputModule } from '@angular/material/input';
   styleUrls: ['./home.component.css'],
   providers : []
 })
-export class HomeComponent implements OnInit{
+
+export class HomeComponent implements OnInit, AfterViewInit{
+  @ViewChild('search') searchInput: any;
 
   constructor (private firebase : FirebaseService)  {};  
   
@@ -44,8 +46,6 @@ export class HomeComponent implements OnInit{
   numero= 10;
   oggi = Date.now();
 
-  
-
   persone=[
     {nome: 'luca', cognome : 'fort', isonline:true, color: 'yellow'},
     {nome: 'spyro', cognome: 'disney', isonline:true, color: 'yellow'},
@@ -54,6 +54,7 @@ export class HomeComponent implements OnInit{
     {nome: 'ficarra', cognome:'bello', isonline:true, color: 'yellow'},
     {nome: 'topo', cognome:'corsaevo', isonline:true, color: 'red'},
   ]
+
   persone$ = of(this.persone);
   filteredpersone$ = this.persone$.pipe(
     filter((persone) => persone.every((persona) => persona.isonline))
@@ -77,18 +78,6 @@ export class HomeComponent implements OnInit{
       name: new FormControl('', {nonNullable : true} ),
       email: new FormControl('', {nonNullable : true}),
     })
-
-      const search = document.getElementById('search') as HTMLInputElement;  
-
-      fromEvent(search, 'input').pipe(
-        map((event: any) => event.target.value),
-        switchMap((query) => of('risultato ricerca:', query).pipe(
-          delay(1000),
-          catchError((error) => of('errore di ricerca:', error))
-        )
-      )
-      ).subscribe((result) => console.log(result));
-    
     // this.addressform  = new FormGroup({
     //   nome : new FormControl (undefined, {nonNullable : true}),
     //   cognome : new FormControl (undefined, {nonNullable : true} ),
@@ -100,6 +89,17 @@ export class HomeComponent implements OnInit{
 
     // })
     // 
+  }
+
+  ngAfterViewInit(): void {
+    fromEvent(this.searchInput.nativeElement, 'input').pipe(
+        map((event: any) => event.target.value),
+        switchMap((query) => of('risultato ricerca:', query).pipe(
+          delay(1000),
+          catchError((error) => of('errore di ricerca:', error))
+        )
+      )
+      ).subscribe((result) => console.log(result));
   }
   
   onsubmitta(){
