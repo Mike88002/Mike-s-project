@@ -1,9 +1,9 @@
 import {MatCardModule} from '@angular/material/card'
-import { Component,Input, OnInit,ViewChild } from '@angular/core';
+import { AfterViewInit, Component,Input, OnInit,ViewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { RouterLink } from '@angular/router';
 import { RouterLinkActive } from '@angular/router';
-import { delay, Observable, from, tap, of, filter, fromEvent, combineLatest, map, mergeMap, exhaustMap } from 'rxjs';
+import { delay, Observable, from, tap, of, filter, fromEvent, combineLatest, map, mergeMap, exhaustMap, switchMap, catchError } from 'rxjs';
 import { AsyncPipe, CommonModule } from '@angular/common';
 import { FirebaseService } from '../../servizi/firebase.service';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
@@ -77,6 +77,17 @@ export class HomeComponent implements OnInit{
       name: new FormControl('', {nonNullable : true} ),
       email: new FormControl('', {nonNullable : true}),
     })
+
+      const search = document.getElementById('search') as HTMLInputElement;  
+
+      fromEvent(search, 'input').pipe(
+        map((event: any) => event.target.value),
+        switchMap((query) => of('risultato ricerca:', query).pipe(
+          delay(1000),
+          catchError((error) => of('errore di ricerca:', error))
+        )
+      )
+      ).subscribe((result) => console.log(result));
     
     // this.addressform  = new FormGroup({
     //   nome : new FormControl (undefined, {nonNullable : true}),

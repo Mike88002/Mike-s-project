@@ -72,10 +72,7 @@ export class AppComponent implements OnInit{
   ngOnInit(): void {
       this.searchForm = this.fb.nonNullable.group({
       searchValue: '',
-    });
-
-    //this.isLeftSidebarCollapsed.set(this.screenWidth() > 768);
-    
+    });    
   }
 
   ngAfterViewInit(): void {}

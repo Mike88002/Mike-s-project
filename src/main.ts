@@ -194,10 +194,10 @@ import { provideHttpClient } from '@angular/common/http';
 // ).subscribe(status => console.log(status))
 // //una missione alla volta
 
-// const sendmessage = (friend : string) => of (`risposta di ${friend}`).pipe(delay(2000));
-// of('mario', 'giggino', 'cesarino').pipe(
-//     mergeMap(friend => sendmessage(friend))
-// ).subscribe(response  => console.log(response));
+ const sendmessage = (friend : string) => of (`risposta di ${friend}`).pipe(delay(2000));
+ of('mario', 'giggino', 'cesarino').pipe(
+     mergeMap(friend => sendmessage(friend))
+ ).subscribe(response  => console.log(response));
 // //i messaggi non vengono caricati necessariamente in ordine, ma vengono caricati contemporaneamente
 
 // // const reserveTable = () => of('prenotazione riservata, la ringraziamo').pipe(delay(500));
@@ -206,18 +206,18 @@ import { provideHttpClient } from '@angular/common/http';
 // // ).subscribe(result => console.log(result))
 // //exhaustMap ignora tutte i click successivi finchè la prima richiesta non viene completata, evitando doppie prenotazioni.
 
-// from ([1,1,1]).pipe(
-//     scan((total, current) => total + current, 0)
-// ).subscribe(total=> console.log(`accensioni schermo : ${total}`))
+
 // //scan invece accumula il totale degli sblocchi, emettendo il conteggio ad ogni sblocco
 
 
 // //catchError  permette di intercettare diversi errori e di fornire messaggi alternativi.
 
-// const shared$ = interval(2000).pipe(
-//     take(6),
-//     shareReplay(3)
+ const shared$ = interval(2000).pipe(
+     take(6),
+     shareReplay(3)
+ );
 //   );
+
    
 //   shared$.subscribe(x => console.log('sub A: ', x));
 //   shared$.subscribe(y => console.log('sub B: ', y));
